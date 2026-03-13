@@ -1,0 +1,24 @@
+services:
+  app:
+    image: ai-weekly-report:latest
+    container_name: weekly-report
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      NODE_ENV: production
+      DATABASE_PATH: /app/data/weekly.db
+      API_KEY: ${API_KEY:-change-me}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+    networks:
+      - default
+      - openclaw_net   # 加入 OpenClaw 网络，使容器间可按名称互访
+
+networks:
+  default: {}
+  openclaw_net:
+    external: true
+    name: openclaw_default   # OpenClaw 的 Docker 网络名，按实际情况修改

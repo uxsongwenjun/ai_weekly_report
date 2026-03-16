@@ -346,6 +346,21 @@ const MOCK_ITEMS = [
     sort_order: 2,
     source_platform: "github",
   },
+  {
+    ...base,
+    section: "opensource",
+    title: "shadcn Agent Skills 技能包",
+    summary: "shadcn 推出的 AI 驱动 Figma-to-code 工作流技能包,支持将 Figma 设计转换为 shadcn/ui 代码。",
+    highlight: "Figma 设计稿转 shadcn/ui",
+    category: "Skill",
+    tags: JSON.stringify(["shadcn", "Figma", "Agent", "Skill"]),
+    source_url: "https://skillsmp.com",
+    heat_data: JSON.stringify({ installs: "12.5k", updated: "3月" }),
+    ai_summary: "SkillsMP 热门设计技能,设计师可一键将 Figma 转成 shadcn 代码。",
+    ai_detail: "支持 Cursor、Warp 等主流 AI 编辑器,与设计系统无缝衔接。",
+    sort_order: 3,
+    source_platform: "skillsmp",
+  },
 
   // ── HOT TOPICS ──
   {

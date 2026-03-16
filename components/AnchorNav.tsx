@@ -66,7 +66,7 @@ export default function AnchorNav() {
 
   return (
     <div 
-      className={`fixed right-8 top-1/3 flex-col z-40 hidden lg:flex transition-opacity duration-500 w-44 ${isScrolling || hovered ? 'opacity-100' : 'opacity-30'}`}
+      className={`fixed right-8 top-1/3 flex-col z-40 hidden min-[1320px]:flex transition-opacity duration-500 w-44 ${isScrolling || hovered ? 'opacity-100' : 'opacity-30'}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

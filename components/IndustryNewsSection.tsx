@@ -12,6 +12,7 @@ interface IndustryNewsSectionProps {
   items: Item[];
 }
 
+/** 行业动态卡片：category 到彩色标签的映射 */
 const CATEGORY_COLORS: Record<string, 'blue' | 'purple' | 'orange' | 'green'> = {
   模型更新: 'blue',
   设计工具: 'green',
@@ -29,9 +30,10 @@ const NewsCard = ({ item }: { item: Item }) => {
   const [isOpen, setIsOpen] = useState(false);
   
   const handleCardClick = (title: string) => {
-    toast.success(`正在跳转至: ${title}`);
     if (item.source_url) {
-        window.open(item.source_url, '_blank');
+      const w = window.open(item.source_url, '_blank');
+      if (w) toast.success(`正在跳转至: ${title}`);
+      else toast.error('请允许弹窗以打开链接');
     }
   };
 

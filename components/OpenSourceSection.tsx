@@ -12,6 +12,7 @@ interface OpenSourceSectionProps {
 
 const OpenSourceCard = ({ item }: { item: Item }) => {
   const iconChar = item.title ? item.title.charAt(0).toUpperCase() : '?';
+  /** heat_data 支持 stars(GitHub) 和 installs(SkillsMP) 两类 */
   const heatData = safeJsonParse<{ stars?: string | number; installs?: string | number }>(item.heat_data, {});
   const heatDisplay = heatData.stars
     ? `⭐ ${heatData.stars}`
@@ -21,8 +22,9 @@ const OpenSourceCard = ({ item }: { item: Item }) => {
   
   const handleCardClick = () => {
     if (item.source_url) {
-      toast.success(`正在跳转: ${item.title}`);
-      window.open(item.source_url, '_blank');
+      const w = window.open(item.source_url, '_blank');
+      if (w) toast.success(`正在跳转: ${item.title}`);
+      else toast.error('请允许弹窗以打开链接');
     }
   };
   

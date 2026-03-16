@@ -17,8 +17,9 @@ const HotTopicCard = ({ item }: { item: Item }) => {
   
   const handleCardClick = (url?: string) => {
     if (url) {
-      toast.success(`正在跳转`);
-      window.open(url, '_blank');
+      const w = window.open(url, '_blank');
+      if (w) toast.success(`正在跳转`);
+      else toast.error('请允许弹窗以打开链接');
     }
   };
 

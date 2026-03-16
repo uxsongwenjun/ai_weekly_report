@@ -53,7 +53,7 @@ const NewsCard = ({ item }: { item: Item }) => {
           </div>
           <div className="flex flex-col flex-1">
             <div className="mb-1.5 self-start relative">
-              <h3 className="text-[15px] font-semibold text-[#37352f] dark:text-[#d4d4d4] leading-snug group-hover:text-[#9b59b6] dark:group-hover:text-[#c486dd] transition-colors tracking-tight line-clamp-1">{item.title}</h3>
+              <h3 className="text-[15px] font-semibold text-[#37352f] dark:text-[#d4d4d4] leading-snug tracking-tight line-clamp-1">{item.title}</h3>
               
             </div>
             <p className="text-[13px] font-light text-[#6b6b6b] dark:text-[#a0a0a0] leading-relaxed line-clamp-2">{item.summary}</p>

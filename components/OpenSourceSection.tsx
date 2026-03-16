@@ -37,7 +37,7 @@ const OpenSourceCard = ({ item }: { item: Item }) => {
             {iconChar}
           </div>
           <div className="relative overflow-hidden">
-            <h4 className="text-[15px] font-semibold tracking-tight text-[#37352f] dark:text-[#d4d4d4] group-hover:text-[#9b59b6] dark:group-hover:text-[#c486dd] transition-colors line-clamp-2 leading-tight">{item.title}</h4>
+            <h4 className="text-[15px] font-semibold tracking-tight text-[#37352f] dark:text-[#d4d4d4] line-clamp-2 leading-tight">{item.title}</h4>
             
           </div>
         </div>

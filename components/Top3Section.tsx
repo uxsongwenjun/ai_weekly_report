@@ -67,7 +67,7 @@ const Top3Card = ({ item }: { item: Item }) => {
               <Tag color="gray">#{category}</Tag>
             </div>
             <div className="mb-2 self-start relative">
-              <h3 className="text-[16px] font-semibold text-[#37352f] dark:text-[#f0f0f0] leading-tight group-hover:text-[#9b59b6] dark:group-hover:text-[#c486dd] transition-colors tracking-tight">
+              <h3 className="text-[16px] font-semibold text-[#37352f] dark:text-[#f0f0f0] leading-tight tracking-tight">
                 {item.title}
               </h3>
               
